@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Meme Editor-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="MemeEditor" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -124,9 +124,11 @@
                         <outlet property="actionButton" destination="Ziu-ni-zVv" id="7hw-PB-pQz"/>
                         <outlet property="albumButton" destination="LHU-fG-AHL" id="fvl-JS-dyR"/>
                         <outlet property="bottomTextField" destination="jgB-hi-XgB" id="dyG-fG-t1n"/>
+                        <outlet property="bottomToolbar" destination="n5v-Zm-B64" id="dZC-yv-X7O"/>
                         <outlet property="cameraButton" destination="6Wm-y8-6Zl" id="7Sh-p9-uaE"/>
                         <outlet property="imagePickerView" destination="4wR-9h-A2b" id="355-lz-G0m"/>
                         <outlet property="topTextField" destination="1vR-ob-XXl" id="2am-wY-7ib"/>
+                        <outlet property="topToolbar" destination="i8u-bw-Lys" id="r9m-BY-YnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

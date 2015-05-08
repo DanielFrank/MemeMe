@@ -8,7 +8,11 @@
 
 import UIKit
 
-class MemeEditor: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var topToolbar: UIToolbar!
+   
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+    
     @IBOutlet weak var albumButton: UIBarButtonItem!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -89,7 +93,9 @@ class MemeEditor: UIViewController, UITextFieldDelegate,UIImagePickerControllerD
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        // Hide toolbar and navbar
+        self.bottomToolbar.hidden = true
+        self.topToolbar.hidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -99,7 +105,9 @@ class MemeEditor: UIViewController, UITextFieldDelegate,UIImagePickerControllerD
         UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // TODO:  Show toolbar and navbar
+        //Show toolbar and navbar
+        self.bottomToolbar.hidden = false
+        self.topToolbar.hidden = false
         
         return memedImage
     }
