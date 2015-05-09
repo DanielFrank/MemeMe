@@ -14,9 +14,10 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
     @IBOutlet weak var bottomToolbar: UIToolbar!
     
     @IBOutlet weak var albumButton: UIBarButtonItem!
-    @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var actionButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
@@ -42,6 +43,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
         actionButton.enabled = (imagePickerView.image != nil)
+        cancelButton.enabled = (Meme.getMemeCopy().count > 0)
+        
         self.subscribeToKeyboardNotifications()
     }
 
@@ -71,7 +74,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)    
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
