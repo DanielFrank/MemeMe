@@ -19,7 +19,14 @@ class Meme {
         self.topString = topString
         self.bottomString = bottomString
         self.originalImage = image
-        self.memedImage = image
+        self.memedImage = memedImage
+    }
+    
+    //Note that arrays get returned by value so this is a read-only copy
+    static func getMemeCopy() -> [Meme] {
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        return appDelegate.memes
     }
     
 }

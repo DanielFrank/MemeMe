@@ -70,6 +70,11 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)    
+    }
+    
+    
     @IBAction func pickAnImageFromAlbum(sender: UIBarButtonItem) {
         self.genImagePicker(UIImagePickerControllerSourceType.PhotoLibrary)
     }
@@ -179,6 +184,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
         return true;
     }
 
-
+    func dismiss() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }
