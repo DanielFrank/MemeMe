@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SEj-RQ-6Aw">
-                                <rect key="frame" x="16" y="94" width="566" height="437"/>
+                                <rect key="frame" x="16" y="105" width="566" height="415"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="GXU-eP-hPg"/>
                                     <constraint firstAttribute="height" constant="330" id="WUH-gh-Tsp"/>
@@ -287,13 +287,31 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJ4-ZX-COr">
+                                <rect key="frame" x="-1" y="563" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gPY-qt-TdX"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Edit" id="AAP-Al-oPU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="brq-nu-noe"/>
+                                    <barButtonItem systemItem="trash" id="O1S-8i-o7w">
+                                        <connections>
+                                            <action selector="deleteMeme:" destination="Xxj-Ru-dkq" id="R5G-ez-MaL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="MfC-Ih-9dZ"/>
                             <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" id="QuA-jD-Pq5"/>
                             <constraint firstAttribute="centerY" secondItem="SEj-RQ-6Aw" secondAttribute="centerY" constant="-12" id="WzP-G1-moV"/>
-                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="69" id="eWA-Pt-Jpd"/>
+                            <constraint firstItem="PJ4-ZX-COr" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-17" id="bm8-FY-rSt"/>
+                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="80" id="eWA-Pt-Jpd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PJ4-ZX-COr" secondAttribute="trailing" constant="-15" id="fni-DV-H4k"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="PJ4-ZX-COr" secondAttribute="bottom" constant="-7" id="gO2-VW-0Qg"/>
                         </constraints>
                     </view>
                     <connections>

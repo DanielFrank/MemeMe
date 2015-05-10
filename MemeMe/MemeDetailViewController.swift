@@ -34,6 +34,10 @@ class MemeDetailViewController : UIViewController {
     
     @IBAction func deleteMeme(sender: UIBarButtonItem) {
         print("DELETE")
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.removeAtIndex(self.index)
+
         self.navigationController!.popViewControllerAnimated(true)
         
     }
