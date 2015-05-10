@@ -13,13 +13,13 @@ class MemesSuperViewController: UIViewController {
     
     
     var memes = [Meme]()
+    let editLabel = "Edit"
+    let doneLabel = "Done"
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.memes = Meme.getMemeCopy() //update in case new memes created
-        if self.memes.count == 0 {
-            editMeme()
-        }
+        self.checkCount()
     }
     
     //Open editor modually
@@ -29,6 +29,14 @@ class MemesSuperViewController: UIViewController {
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    //delete meme given indexPath
+    func deleteMeme (indexPath: NSIndexPath) {
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.removeAtIndex(indexPath.row)
+        self.memes = appDelegate.memes
+        self.checkCount()
+    }
     
     //open detailViewController given indexPath
     func openDetailVC (indexPath: NSIndexPath) {
@@ -36,6 +44,27 @@ class MemesSuperViewController: UIViewController {
         detailController.meme = self.memes[indexPath.row]
         detailController.index = indexPath.row
         self.navigationController!.pushViewController(detailController, animated: true)
+    }
+    
+    //If no memes, open editor
+    func checkCount() {
+        if self.memes.count == 0 {
+            editMeme()
+        }
+        
+    }
+    
+    //toggle the edit button when clicked
+    func toggleEditButton (sender: UIBarButtonItem) {
+        if sender.title == self.editLabel {
+            sender.title = self.doneLabel
+        } else { //assuming set to done
+            sender.title = self.editLabel
+        }
+    }
+    
+    func allowEditing (editButton: UIBarButtonItem) -> Bool {
+        return editButton.title == self.doneLabel
     }
     
     

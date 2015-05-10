@@ -11,7 +11,8 @@ import UIKit
 class MemeTableViewController: MemesSuperViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var editButton: UIBarButtonItem!
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,6 +21,10 @@ class MemeTableViewController: MemesSuperViewController, UITableViewDataSource, 
 
     @IBAction func add(sender: UIBarButtonItem) {
         self.editMeme()
+    }    
+
+    @IBAction func edit(sender: UIBarButtonItem) {
+        self.toggleEditButton(sender)
     }    
     
     // Table View Data Source
@@ -42,6 +47,17 @@ class MemeTableViewController: MemesSuperViewController, UITableViewDataSource, 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.openDetailVC(indexPath)
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return self.allowEditing(self.editButton)
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.deleteMeme(indexPath)
+            self.tableView.reloadData()
+        }
     }
     
     

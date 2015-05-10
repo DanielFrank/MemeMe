@@ -12,6 +12,8 @@ class MemeCollectionViewController: MemesSuperViewController, UICollectionViewDa
     
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,6 +24,11 @@ class MemeCollectionViewController: MemesSuperViewController, UICollectionViewDa
     
     @IBAction func add(sender: UIBarButtonItem) {
         self.editMeme()
+    }
+    
+    @IBAction func edit(sender: UIBarButtonItem) {
+        self.toggleEditButton(sender)
+        self.collectionView!.allowsMultipleSelection = self.allowEditing(sender)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,7 +48,10 @@ class MemeCollectionViewController: MemesSuperViewController, UICollectionViewDa
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
-        self.openDetailVC(indexPath)
+        if self.allowEditing(self.editButton) == false {
+            self.openDetailVC(indexPath)
+        } else {
+        }
     }
     
 }

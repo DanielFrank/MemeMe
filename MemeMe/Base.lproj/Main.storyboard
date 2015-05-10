@@ -227,6 +227,9 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzE-Jc-e1R">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlightedImage="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-Hq-M6w">
+                                                    <rect key="frame" x="20" y="25" width="50" height="50"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -244,6 +247,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sent Memes" id="pD2-eb-VnR">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="0v9-TD-1fg">
+                            <connections>
+                                <action selector="edit:" destination="mfL-TQ-tIs" id="bcH-Eh-aod"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="G7n-ug-nbG">
                             <connections>
                                 <action selector="add:" destination="mfL-TQ-tIs" id="PYv-Qm-twe"/>
@@ -252,6 +260,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cmO-iI-ss3" id="0eL-HS-Psd"/>
+                        <outlet property="editButton" destination="0v9-TD-1fg" id="rlE-fQ-WFm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTs-4y-mcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,6 +368,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sent Memes" id="gqs-lC-WmT">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="w5m-GJ-G6g">
+                            <connections>
+                                <action selector="edit:" destination="RbQ-JP-baf" id="kYG-4H-c6z"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hOG-9D-1rH">
                             <connections>
                                 <action selector="add:" destination="RbQ-JP-baf" id="zIJ-3d-462"/>
@@ -366,6 +380,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="w5m-GJ-G6g" id="nI8-T1-bw6"/>
                         <outlet property="tableView" destination="B67-bj-fHz" id="5z1-HB-oxA"/>
                     </connections>
                 </viewController>
@@ -374,4 +389,7 @@
             <point key="canvasLocation" x="655" y="-254"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark" width="5000" height="5000"/>
+    </resources>
 </document>
