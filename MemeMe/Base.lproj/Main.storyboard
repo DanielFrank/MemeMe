@@ -270,14 +270,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tb-gL-zR0">
-                                <rect key="frame" x="-1" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem title="Item" id="4JM-ec-poA"/>
-                                </items>
-                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SEj-RQ-6Aw">
-                                <rect key="frame" x="1" y="125" width="596" height="375"/>
+                                <rect key="frame" x="16" y="94" width="566" height="437"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="GXU-eP-hPg"/>
                                     <constraint firstAttribute="height" constant="330" id="WUH-gh-Tsp"/>
@@ -296,40 +290,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="09O-3l-h31"/>
-                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="top" secondItem="aZ7-wn-nhJ" secondAttribute="bottom" constant="127" id="5JP-jl-e65"/>
-                            <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="CSr-yf-WSK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SEj-RQ-6Aw" secondAttribute="trailing" constant="-13" id="ERq-GU-Xtv"/>
-                            <constraint firstItem="6tb-gL-zR0" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="56" id="LAK-yT-6uW"/>
                             <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="MfC-Ih-9dZ"/>
-                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="top" secondItem="aZ7-wn-nhJ" secondAttribute="bottom" constant="127" id="Ojk-RD-bJB"/>
-                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-15" id="QuA-jD-Pq5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SEj-RQ-6Aw" secondAttribute="trailing" constant="-13" id="Rzp-iC-Zsl"/>
-                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-15" id="SD8-bb-5aq"/>
-                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="6tb-gL-zR0" secondAttribute="bottom" id="VVY-iM-fBs"/>
+                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" id="QuA-jD-Pq5"/>
                             <constraint firstAttribute="centerY" secondItem="SEj-RQ-6Aw" secondAttribute="centerY" constant="-12" id="WzP-G1-moV"/>
-                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-15" id="X7d-YL-jbf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6tb-gL-zR0" secondAttribute="trailing" constant="-15" id="X8P-49-c1A"/>
-                            <constraint firstAttribute="centerY" secondItem="SEj-RQ-6Aw" secondAttribute="centerY" constant="-12" id="c2h-jL-iC9"/>
-                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="123" id="doa-vS-7t1"/>
-                            <constraint firstItem="6tb-gL-zR0" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-17" id="ofQ-eN-Zhe"/>
-                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="123" id="wIR-UJ-c9l"/>
+                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="69" id="eWA-Pt-Jpd"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="09O-3l-h31"/>
-                                <exclude reference="5JP-jl-e65"/>
-                                <exclude reference="CSr-yf-WSK"/>
-                                <exclude reference="ERq-GU-Xtv"/>
-                                <exclude reference="Ojk-RD-bJB"/>
-                                <exclude reference="Rzp-iC-Zsl"/>
-                                <exclude reference="SD8-bb-5aq"/>
-                                <exclude reference="X7d-YL-jbf"/>
-                                <exclude reference="c2h-jL-iC9"/>
-                                <exclude reference="doa-vS-7t1"/>
-                                <exclude reference="wIR-UJ-c9l"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="SEj-RQ-6Aw" id="uX4-69-zyr"/>

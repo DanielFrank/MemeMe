@@ -12,7 +12,9 @@ class MemeDetailViewController : UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
     var meme: Meme!
+    var index: Int!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,4 +30,15 @@ class MemeDetailViewController : UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.hidden = false
     }
+    
+    
+    @IBAction func deleteMeme(sender: UIBarButtonItem) {
+        print("DELETE")
+        self.navigationController!.popViewControllerAnimated(true)
+        
+    }
+
+    
+    
+    
 }
