@@ -21,15 +21,36 @@ class MemeCollectionViewController: MemesSuperViewController, UICollectionViewDa
         self.collectionView.reloadData()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.doneLabel = "Delete Selected"
+    }
     
     @IBAction func add(sender: UIBarButtonItem) {
         self.editMeme()
     }
     
     @IBAction func edit(sender: UIBarButtonItem) {
+        if (self.allowEditing(sender)) {
+            self.deleteSelected()
+        }
+        
         self.toggleEditButton(sender)
         self.collectionView!.allowsMultipleSelection = self.allowEditing(sender)
     }
+
+    func deleteSelected() {
+        let arr = self.collectionView!.indexPathsForSelectedItems() as! [NSIndexPath]
+        if arr.count == 0 {
+            return
+        }
+        let sortedArray = arr.sorted{$0.row < $1.row}.reverse()
+        for indexPath in sortedArray {
+            self.deleteMeme(indexPath)
+        }
+        self.collectionView.reloadData()
+    }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count

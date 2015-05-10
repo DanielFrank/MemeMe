@@ -13,8 +13,8 @@ class MemesSuperViewController: UIViewController {
     
     
     var memes = [Meme]()
-    let editLabel = "Edit"
-    let doneLabel = "Done"
+    var editLabel = "Edit"
+    var doneLabel = "Done"
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

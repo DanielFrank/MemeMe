@@ -246,6 +246,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="pD2-eb-VnR">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="0v9-TD-1fg">
                             <connections>
@@ -258,6 +259,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="cmO-iI-ss3" id="0eL-HS-Psd"/>
                         <outlet property="editButton" destination="0v9-TD-1fg" id="rlE-fQ-WFm"/>
@@ -265,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTs-4y-mcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="-1060"/>
+            <point key="canvasLocation" x="786" y="-1218"/>
         </scene>
         <!--Meme Detail View Controller-->
         <scene sceneID="eBb-5s-b6M">
@@ -367,6 +369,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="gqs-lC-WmT">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="w5m-GJ-G6g">
                             <connections>
@@ -379,6 +382,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editButton" destination="w5m-GJ-G6g" id="nI8-T1-bw6"/>
                         <outlet property="tableView" destination="B67-bj-fHz" id="5z1-HB-oxA"/>
