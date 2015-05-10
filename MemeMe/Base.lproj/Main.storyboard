@@ -242,7 +242,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="pD2-eb-VnR"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="pD2-eb-VnR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G7n-ug-nbG">
+                            <connections>
+                                <action selector="add:" destination="mfL-TQ-tIs" id="PYv-Qm-twe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cmO-iI-ss3" id="0eL-HS-Psd"/>
                     </connections>
@@ -329,7 +335,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="gqs-lC-WmT"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="gqs-lC-WmT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hOG-9D-1rH">
+                            <connections>
+                                <action selector="add:" destination="RbQ-JP-baf" id="zIJ-3d-462"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="B67-bj-fHz" id="5z1-HB-oxA"/>
                     </connections>

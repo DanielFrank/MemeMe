@@ -24,6 +24,21 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    
+    @IBAction func add(sender: UIBarButtonItem) {
+        self.editMeme()
+    }
+    
+    //Open editor modually
+    //TODO: Examine stripped to super class
+    func editMeme() {
+        let storyboard = self.storyboard
+        let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+
 
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

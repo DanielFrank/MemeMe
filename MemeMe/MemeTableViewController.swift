@@ -25,12 +25,19 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func add(sender: UIBarButtonItem) {
+        self.editMeme()
+    }
+
+    //Open editor modually
+    func editMeme() {
+        let storyboard = self.storyboard
+        let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
-    // MARK: Table View Data Source
     
+    // Table View Data Source
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memes.count
@@ -56,11 +63,5 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    //Open editor modually
-    func editMeme() {
-        let storyboard = self.storyboard
-        let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
     
 }
