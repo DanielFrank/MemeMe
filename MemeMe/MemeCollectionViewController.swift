@@ -8,37 +8,21 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController, UICollectionViewDataSource {
+class MemeCollectionViewController: MemesSuperViewController, UICollectionViewDataSource {
     
-    var memes = [Meme]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden = false
-        self.memes = Meme.getMemeCopy() //update in case new memes created
-        if self.memes.count == 0 {
-            editMeme()
-        } else {
-            self.collectionView.reloadData()
-        }
+        self.collectionView.reloadData()
     }
     
     
     @IBAction func add(sender: UIBarButtonItem) {
         self.editMeme()
     }
-    
-    //Open editor modually
-    //TODO: Examine stripped to super class
-    func editMeme() {
-        let storyboard = self.storyboard
-        let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-
-
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.memes.count
@@ -57,12 +41,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
     {
-        
-        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
-        detailController.meme = self.memes[indexPath.row]
-        detailController.index = indexPath.row
-        self.navigationController!.pushViewController(detailController, animated: true)
-        
+        self.openDetailVC(indexPath)
     }
     
 }
