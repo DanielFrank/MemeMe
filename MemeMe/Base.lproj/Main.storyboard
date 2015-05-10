@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mch-aA-IL4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -210,7 +211,7 @@
                                 <rect key="frame" x="9" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CfK-iN-RHe">
-                                    <size key="itemSize" width="241" height="155"/>
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -220,11 +221,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="241" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzE-Jc-e1R">
-                                                    <rect key="frame" x="0.0" y="0.0" width="241" height="155"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -269,29 +270,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SEj-RQ-6Aw">
-                                <rect key="frame" x="1" y="147" width="596" height="330"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tb-gL-zR0">
+                                <rect key="frame" x="-1" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="4JM-ec-poA"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SEj-RQ-6Aw">
+                                <rect key="frame" x="1" y="125" width="596" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="GXU-eP-hPg"/>
+                                    <constraint firstAttribute="height" constant="330" id="WUH-gh-Tsp"/>
+                                    <constraint firstAttribute="width" secondItem="SEj-RQ-6Aw" secondAttribute="height" multiplier="298:165" id="m3X-gx-Jzq"/>
+                                    <constraint firstAttribute="width" constant="596" id="yOI-Ct-4Ll"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GXU-eP-hPg"/>
+                                        <exclude reference="WUH-gh-Tsp"/>
+                                        <exclude reference="m3X-gx-Jzq"/>
+                                        <exclude reference="yOI-Ct-4Ll"/>
                                     </mask>
                                 </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="09O-3l-h31"/>
+                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="top" secondItem="aZ7-wn-nhJ" secondAttribute="bottom" constant="127" id="5JP-jl-e65"/>
                             <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="CSr-yf-WSK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SEj-RQ-6Aw" secondAttribute="trailing" constant="-13" id="ERq-GU-Xtv"/>
+                            <constraint firstItem="6tb-gL-zR0" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="56" id="LAK-yT-6uW"/>
+                            <constraint firstAttribute="centerX" secondItem="SEj-RQ-6Aw" secondAttribute="centerX" constant="1" id="MfC-Ih-9dZ"/>
+                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="top" secondItem="aZ7-wn-nhJ" secondAttribute="bottom" constant="127" id="Ojk-RD-bJB"/>
+                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-15" id="QuA-jD-Pq5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SEj-RQ-6Aw" secondAttribute="trailing" constant="-13" id="Rzp-iC-Zsl"/>
                             <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-15" id="SD8-bb-5aq"/>
+                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="6tb-gL-zR0" secondAttribute="bottom" id="VVY-iM-fBs"/>
+                            <constraint firstAttribute="centerY" secondItem="SEj-RQ-6Aw" secondAttribute="centerY" constant="-12" id="WzP-G1-moV"/>
+                            <constraint firstItem="SEj-RQ-6Aw" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-15" id="X7d-YL-jbf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6tb-gL-zR0" secondAttribute="trailing" constant="-15" id="X8P-49-c1A"/>
+                            <constraint firstAttribute="centerY" secondItem="SEj-RQ-6Aw" secondAttribute="centerY" constant="-12" id="c2h-jL-iC9"/>
+                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="123" id="doa-vS-7t1"/>
+                            <constraint firstItem="6tb-gL-zR0" firstAttribute="leading" secondItem="coc-P2-ujK" secondAttribute="leadingMargin" constant="-17" id="ofQ-eN-Zhe"/>
+                            <constraint firstItem="9sk-6j-pQa" firstAttribute="top" secondItem="SEj-RQ-6Aw" secondAttribute="bottom" constant="123" id="wIR-UJ-c9l"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="09O-3l-h31"/>
+                                <exclude reference="5JP-jl-e65"/>
                                 <exclude reference="CSr-yf-WSK"/>
+                                <exclude reference="ERq-GU-Xtv"/>
+                                <exclude reference="Ojk-RD-bJB"/>
                                 <exclude reference="Rzp-iC-Zsl"/>
                                 <exclude reference="SD8-bb-5aq"/>
+                                <exclude reference="X7d-YL-jbf"/>
+                                <exclude reference="c2h-jL-iC9"/>
+                                <exclude reference="doa-vS-7t1"/>
+                                <exclude reference="wIR-UJ-c9l"/>
                             </mask>
                         </variation>
                     </view>
