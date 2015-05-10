@@ -17,7 +17,6 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.memes = Meme.getMemeCopy() //update in case new memes created
-        //Since table view is 1st, it needs to check for memes
         if self.memes.count == 0 {
             editMeme()
         } else {

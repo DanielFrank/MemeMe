@@ -18,13 +18,12 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden = false
         self.memes = Meme.getMemeCopy() //update in case new memes created
-        self.collectionView.reloadData()
+        if self.memes.count == 0 {
+            editMeme()
+        } else {
+            self.collectionView.reloadData()
+        }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     
     
     @IBAction func add(sender: UIBarButtonItem) {
