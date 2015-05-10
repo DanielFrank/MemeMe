@@ -22,6 +22,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    var editedMeme: Meme?
+    
     let defaultTop = "TOP"
     let defaultBottom = "BOTTOM"
     
@@ -36,12 +38,16 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
         super.viewDidLoad()
         prepTextField(topTextField, defaultValue: defaultTop)
         prepTextField(bottomTextField, defaultValue: defaultBottom)
+        if let meme = self.editedMeme {
+            self.topTextField.text = meme.topString
+            self.bottomTextField.text = meme.bottomString
+            self.imagePickerView.image = meme.originalImage
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        
         actionButton.enabled = (imagePickerView.image != nil)
         cancelButton.enabled = (Meme.getMemeCopy().count > 0)
         
@@ -121,10 +127,20 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate,UIImagePic
     }
     
     func save(memedImage : UIImage) {
-        var meme = Meme(topString: self.topTextField.text, bottomString: self.bottomTextField.text, image: self.imagePickerView.image!, memedImage: memedImage)
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
+
+        if let meme = self.editedMeme {
+            meme.topString = self.topTextField.text
+            meme.bottomString = self.bottomTextField.text
+            meme.originalImage = self.imagePickerView.image!
+            meme.memedImage = memedImage
+        } else {
+            var meme = Meme(topString: self.topTextField.text, bottomString: self.bottomTextField.text, image: self.imagePickerView.image!, memedImage: memedImage)
+            appDelegate.memes.append(meme)
+        }
+
+        
     }
     
     //keyboard-related stuff

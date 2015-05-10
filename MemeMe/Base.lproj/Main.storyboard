@@ -293,7 +293,11 @@
                                     <constraint firstAttribute="height" constant="44" id="gPY-qt-TdX"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Edit" id="AAP-Al-oPU"/>
+                                    <barButtonItem title="Edit" id="AAP-Al-oPU">
+                                        <connections>
+                                            <action selector="editMeme:" destination="Xxj-Ru-dkq" id="6bk-kA-Knd"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="brq-nu-noe"/>
                                     <barButtonItem systemItem="trash" id="O1S-8i-o7w">
                                         <connections>

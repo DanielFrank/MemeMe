@@ -33,7 +33,6 @@ class MemeDetailViewController : UIViewController {
     
     
     @IBAction func deleteMeme(sender: UIBarButtonItem) {
-        print("DELETE")
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.removeAtIndex(self.index)
@@ -42,6 +41,12 @@ class MemeDetailViewController : UIViewController {
         
     }
 
+    @IBAction func editMeme(sender: UIBarButtonItem) {
+        let storyboard = self.storyboard
+        let vc = storyboard!.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        vc.editedMeme = self.meme
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
     
     
     
